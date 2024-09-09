@@ -8,28 +8,28 @@ import profile7 from '../assets/profile-8.jpg';
 
 export const PROFILES = [
     {
-        title: 'TITLE',
-        tag: 'TAG',
+        title: 'Spaceman Django',
+        tag: 'Spaceman makes space travels fun',
         image: profile1
     },
     {
-        title: 'TITLE',
-        tag: 'TAG',
+        title: "World's chillest man",
+        tag: 'Exactly as his name says',
         image: profile2
     },
     {
-        title: 'TITLE',
-        tag: 'TAG',
+        title: 'Dribbble Head',
+        tag: 'Air head, sporty guy and fun to be around',
         image: profile3
     },
     {
-        title: 'TITLE',
-        tag: 'TAG',
+        title: 'SKULLZ',
+        tag: `UK's most notorious gangster, favourite phrase "Wagwan"`,
         image: profile4
     },
     {
-        title: 'TITLE',
-        tag: 'TAG',
+        title: 'SKULLZ Bruv',
+        tag: `UK's second most notorious gangster`,
         image: profile5
     },
     {
