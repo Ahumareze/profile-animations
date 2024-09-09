@@ -8,6 +8,11 @@ import profile7 from '../assets/profile-8.jpg';
 
 export const PROFILES = [
     {
+        title: 'Eyez',
+        tag: 'Just a normal boy with eyes',
+        image: profile7
+    },
+    {
         title: 'Spaceman Django',
         tag: 'Spaceman makes space travels fun',
         image: profile1
@@ -33,13 +38,8 @@ export const PROFILES = [
         image: profile5
     },
     {
-        title: 'TITLE',
-        tag: 'TAG',
+        title: 'Box Boy',
+        tag: 'Weird individual,',
         image: profile6
     },
-    {
-        title: 'TITLE',
-        tag: 'TAG',
-        image: profile7
-    }
 ]

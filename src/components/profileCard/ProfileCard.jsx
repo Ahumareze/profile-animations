@@ -26,7 +26,7 @@ export default function ProfileCard({
 
     return(
         <div 
-            className={`relative  duration-300 ease-in ${hide ? '' : 'cursor-pointer hover:scale-[1.03]'}`} 
+            className={`relative  duration-300 ease-in ${hide ? '' : 'cursor-pointer shadow-lg hover:scale-[1.03]'}`} 
             onClick={() => {
                 if(hide) return
 
