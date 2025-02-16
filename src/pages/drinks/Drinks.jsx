@@ -4,6 +4,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import DrinkItem from './DrinkItem';
+import ExtraDetails from './ExtraDetails';
 gsap.registerPlugin(ScrollTrigger);
 
 function Drinks() {
@@ -17,7 +18,7 @@ function Drinks() {
                 trigger: containerRef.current,
                 start: 'top top',
                 end: 'bottom 10%',
-                markers: true,
+                // markers: true,
                 scrub: true,
                 pin: true
             },
@@ -62,33 +63,28 @@ function Drinks() {
                         />
                         <DrinkItem
                             image={'/split-strawberry.webp'}
-                            title={'Chocolate Milk'}
+                            title={'Strawberry Milk'}
                             index={2}
                             bg={'bg-[#c03e47]'}
                             pieces={'/split-berries.webp'}
                         />
                         <DrinkItem
                             image={'/split-milkshake.webp'}
-                            title={'Chocolate Milk'}
+                            title={'Vanilla Milkshake'}
                             index={3}
                             pieces={'/split-wafers.webp'}
                             bg={'bg-[#d8c5a4]'}
                         />
                         <DrinkItem
                             image={'/split-choco.webp'}
-                            title={'Chocolate Milk'}
+                            title={'Max Chocolate Milk'}
                             index={3}
                             bg={'bg-[#3e3c3a]'}
                             pieces={'/split-choco-bars.webp'}
                         />
                     </div>
                 </div>
-                <div className='h-screen w-full bg-[#7f3b2d]'>
-
-                </div>
-                <div>
-                    
-                </div>
+                <ExtraDetails />
             </div>
         </LoaderContainer>
     )
