@@ -16,13 +16,13 @@ export default function Header(){
             <div className="flex items-center gap-5">
                 <a href="https://ifeanyicodes.com" target="_blank">
                     <div className="flex items-center gap-2 px-5 py-2 bg-[#f5f5f5] hover:bg-[#eee] text-black/80 rounded-full duration-300 ease-in-out">
-                        <p className="font-medium">My Portfolio</p>
+                        <p className="font-medium hidden md:flex">My Portfolio</p>
                         <FaGlobe />
                     </div>
                 </a>
                 <a href="https://github.com/Ahumareze" target="_blank">
                     <div className="flex items-center gap-2 px-5 py-2 bg-black text-white rounded-full ">
-                        <p className="font-medium">My Github</p>
+                        <p className="font-medium hidden md:flex">My Github</p>
                         <FaGithub />
                     </div>
                 </a>
