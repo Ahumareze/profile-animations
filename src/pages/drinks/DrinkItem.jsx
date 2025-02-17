@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 
-export default function DrinkItem({title, image, bg, index, pieces}){
+export default function DrinkItem({title, image, bg, index, pieces, style}){
     const [transform, setTransform] = useState({ x: 0, y: 0 });
     const containerRef = useRef(null);
     const imgRef = useRef(null);
@@ -42,7 +42,7 @@ export default function DrinkItem({title, image, bg, index, pieces}){
 
     return(
         <div 
-            className='h-[500px] min-w-[650px] max-w-[650px] relative overflow-hidden group' 
+            className={`h-[500px] min-w-[650px] max-w-[650px] relative overflow-hidden group ${style}`}
             id={id} 
             ref={containerRef}
             onMouseMove={handleMouseMove}

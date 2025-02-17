@@ -3,7 +3,7 @@ import LoaderContainer from '../container/LoaderContainer'
 
 function Home() {
     return (
-        <LoaderContainer>
+        <LoaderContainer backdrop={'bg-white'}>
             <div className='w-full min-h-screen'>
                 <div className='py-20 w-full mt-20 px-[20px]'>
                     <h1 className='text-5xl font-bold text-center'>A couple <span className='text-blue-500'>cool stuff</span> I'm working on ⚡️</h1>

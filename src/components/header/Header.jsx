@@ -1,8 +1,8 @@
 import { FaGithub, FaGlobe } from "react-icons/fa6";
 
-export default function Header(){
+export default function Header({backdrop}){
     return(
-        <div className="fixed top-0 left-0 w-full bg-white flex px-[20px] md:px-[50px] py-5 border-b border-black justify-between items-center z-[1000]">
+        <div className={`fixed top-0 left-0 w-full flex px-[20px] md:px-[50px] py-5 border-b border-black/10 justify-between items-center z-[1000] ${backdrop}`}>
             <a href="/">
                 <div className="flex items-center gap-2">
                     <img
