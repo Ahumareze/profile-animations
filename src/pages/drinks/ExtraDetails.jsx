@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -8,39 +8,73 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function ExtraDetails(){
     const extraDetailsContainerRef = useRef();
+    const textRef = useRef(null);
 
-    useGSAP(() => {
-        let tl = gsap.timeline();
+    useEffect(() => {
+        const textElement = textRef.current;
 
-        tl.to('#splyt-ifeanyi-title', {
-            scrollTrigger: {
-                trigger: extraDetailsContainerRef.current,
-                start: '10% 50%',
-                end: '50% 50%',
-                // markers: true,
-                scrub: true,
-            },
-            y: -150,
-            opacity: 1,
-            stagger: {
-                amount: 0.6
+        if (!textElement) return;
+
+        // Set up the Intersection Observer
+        const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                // Animate the text when it comes into view
+                gsap.fromTo('#splyt-ifeanyi-title',
+                { opacity: 0, y: 150 }, // Initial state (hidden)
+                { opacity: 1, y: 0, duration: 1, ease: 'power3.out', stagger: {amount: 0.5} } // Final state (visible)
+                );
+
+                // Stop observing after the animation runs (optional)
+                observer.unobserve(textElement);
             }
-        })
-    }, {scope: extraDetailsContainerRef})
+            });
+        },
+        { threshold: 0.5 } // Trigger when 50% of the element is visible
+        );
+
+        // Start observing the text element
+        observer.observe(textElement);
+
+        // Cleanup observer on unmount
+        return () => {
+        observer.unobserve(textElement);
+        };
+    }, []);
+
+    // useGSAP(() => {
+    //     let tl = gsap.timeline();
+
+    //     tl.to('#splyt-ifeanyi-title', {
+    //         scrollTrigger: {
+    //             trigger: extraDetailsContainerRef.current,
+    //             start: '10% 50%',
+    //             end: '50% 50%',
+    //             // markers: true,
+    //             scrub: true,
+    //         },
+    //         y: -150,
+    //         opacity: 1,
+    //         stagger: {
+    //             amount: 0.6
+    //         }
+    //     })
+    // }, {scope: extraDetailsContainerRef})
 
     return(
         <div className='h-screen w-full bg-[#7f3b2d] flex flex-col items-center  px-[20px]' ref={extraDetailsContainerRef}>
             <div className="w-full flex items-center justify-center flex-1">
-                <div className="text-[#faeade] text-center">
+                <div className="text-[#faeade] text-center" ref={textRef}>
                     <div className='flex items-center justify-center gap-0 h-fit overflow-hidden'>
                         {'IFEANYI'.split('').map((string, index) => (
-                            <div key={index} className='text-5xl md:text-7xl font-bold relative top-[150px] uppercase opacity-0' id={'splyt-ifeanyi-title'}>
+                            <div key={index} className='text-5xl md:text-7xl font-bold relative opacity-0' id={'splyt-ifeanyi-title'}>
                                 {string}
                             </div>
                         ))}
                         <div className='w-[30px]' />
                         {'AHUMAREZE'.split('').map((string, index) => (
-                            <div key={index} className='text-5xl md:text-7xl font-bold relative top-[150px] uppercase opacity-0' id={'splyt-ifeanyi-title'}>
+                            <div key={index} className='text-5xl md:text-7xl font-bold relative opacity-0' id={'splyt-ifeanyi-title'}>
                                 {string}
                             </div>
                         ))}
@@ -51,21 +85,21 @@ export default function ExtraDetails(){
                             OPEN TO WORK
                         </div>
                     </div>
-                    <div className='flex items-center justify-center gap-0 h-fit overflow-hidden flex-wrap'>
+                    <div className='flex items-center justify-center gap-0 h-fit overflow-hidden flex-wrap' ref={textRef}>
                         {'CREATIVE'.split('').map((string, index) => (
-                            <div key={index} className='text-5xl md:text-7xl font-bold relative top-[150px] uppercase opacity-0' id={'splyt-ifeanyi-title'}>
+                            <div key={index} className='text-5xl md:text-7xl font-bold relative opacity-0' id={'splyt-ifeanyi-title'}>
                                 {string}
                             </div>
                         ))}
                         <div className='w-[30px]' />
                         {'FRONTEND'.split('').map((string, index) => (
-                            <div key={index} className='text-5xl md:text-7xl font-bold relative top-[150px] uppercase opacity-0' id={'splyt-ifeanyi-title'}>
+                            <div key={index} className='text-5xl md:text-7xl font-bold relative opacity-0' id={'splyt-ifeanyi-title'}>
                                 {string}
                             </div>
                         ))}
                          <div className='w-[30px]' />
                         {'DEVELOPER'.split('').map((string, index) => (
-                            <div key={index} className='text-5xl md:text-7xl font-bold relative top-[150px] uppercase opacity-0' id={'splyt-ifeanyi-title'}>
+                            <div key={index} className='text-5xl md:text-7xl font-bold relative opacity-0' id={'splyt-ifeanyi-title'}>
                                 {string}
                             </div>
                         ))}

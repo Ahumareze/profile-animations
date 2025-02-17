@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 
-export default function DrinkItem({title, image, bg, index, pieces, style}){
+export default function DrinkItem({title, image, bg, index, pieces, style, backgroud}){
     const [transform, setTransform] = useState({ x: 0, y: 0 });
     const containerRef = useRef(null);
     const imgRef = useRef(null);
@@ -48,7 +48,10 @@ export default function DrinkItem({title, image, bg, index, pieces, style}){
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
         >
-            <div className={`h-[400px] w-full rounded-2xl mt-[100px] ${bg}`}>
+            <div 
+                className={`h-[400px] w-full rounded-2xl mt-[100px] ${bg}`}
+                style={{ backgroundImage: `url(${backgroud})`}}
+            >
                 <img
                     src={image}
                     alt=''

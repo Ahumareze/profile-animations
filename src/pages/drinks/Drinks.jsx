@@ -47,6 +47,7 @@ function Drinks() {
                             bg={'bg-[#bd7c57]'}
                             pieces={'/split-choco-bars.webp'}
                             style={'rotate-[7deg]'}
+                            backgroud={'/choco-backdrop.svg'}
                         />
                         <DrinkItem
                             image={'/split-strawberry.webp'}
@@ -55,6 +56,7 @@ function Drinks() {
                             bg={'bg-[#c03e47]'}
                             pieces={'/split-berries.webp'}
                             style={'rotate-[-6deg]'}
+                            backgroud={'/strawberry-backdrop.svg'}
                         />
                         <DrinkItem
                             image={'/split-milkshake.webp'}
@@ -63,6 +65,7 @@ function Drinks() {
                             pieces={'/split-wafers.webp'}
                             bg={'bg-[#d8c5a4]'}
                             style={'rotate-[7deg]'}
+                            backgroud={'/vanilla-backdrop.svg'}
                         />
                         <DrinkItem
                             image={'/split-choco.webp'}
@@ -71,6 +74,7 @@ function Drinks() {
                             bg={'bg-[#3e3c3a]'}
                             pieces={'/split-choco-bars.webp'}
                             style={'rotate-[-7deg]'}
+                            backgroud={'/max-choco-backdrop.svg'}
                         />
                     </div>
                 </div>
