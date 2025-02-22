@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import LoaderContainer from '../../container/LoaderContainer'
+import LoaderContainer from '../../container/loader/LoaderContainer'
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";

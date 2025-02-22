@@ -1,5 +1,5 @@
 import React from 'react'
-import LoaderContainer from '../container/LoaderContainer'
+import LoaderContainer from '../container/loader/LoaderContainer'
 import { FaGlobe } from 'react-icons/fa6'
 import { FiArrowRight, FiArrowUpRight } from 'react-icons/fi'
 
@@ -29,7 +29,18 @@ function Home() {
                                 alt='rhymez like dimez'
                                 className='w-full rounded-xl max-h-[400px] object-cover'
                             />
-                            <p className='mt-5 mb-2 text-lg text-black/70'>An interactive product listing feature for Spylt. Features an swipe to scroll, 3d hover effect and some really cool animations</p>
+                            <p className='mt-5 mb-2 text-lg text-black/70'>An interactive product listing feature for Spylt. Features scroll to swipe, 3d hover effect and some really cool animations</p>
+                            <p className='text-black/70'>React 🔸 Gsap 🔸 Tailwind CSS</p>
+                        </div>
+                    </a>
+                    <a href='/future-furnitures'>
+                        <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] duration-300 ease-in-out'>
+                            <img
+                                src='/furniture-hero-image.png'
+                                alt='rhymez like dimez'
+                                className='w-full rounded-xl max-h-[400px] object-cover'
+                            />
+                            <p className='mt-5 mb-2 text-lg text-black/70'>Coming soon</p>
                             <p className='text-black/70'>React 🔸 Gsap 🔸 Tailwind CSS</p>
                         </div>
                     </a>
