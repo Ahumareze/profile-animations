@@ -14,7 +14,7 @@ function Works() {
             width: '500vh',
             scrollTrigger: {
                 trigger: container,
-                start: '15% 50%',
+                start: '10% 70%',
                 end: '25% 40%',
                 scrub: true,
                 // markers: true
@@ -37,8 +37,8 @@ function Works() {
                 />
                 <img
                     className='h-[200px] absolute top-[40vh] right-[50px] z-[50]'
-                    src='/yellow-coin-2.svg'
-                    alt='yellow-coin'
+                    src='/rpg-game.png'
+                    alt='secure'
                 />
                 <h1 className='font-black text-5xl md:text-6xl text-center text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[51]'>4+ Years of building Interractive & scalable softwares</h1>
             </div>
