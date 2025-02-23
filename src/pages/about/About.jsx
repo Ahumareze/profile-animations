@@ -4,6 +4,7 @@ import gsap from 'gsap'
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitTextAnimations from '../../components/texts/SplitTextAnimations';
+import PhotosGrid from './photosGrid/PhotosGrid';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -126,6 +127,11 @@ function About() {
                     </div>
                 </div>
             </div>
+            <div className='h-[50px] w-full bg-yellow-500 mt-10'>
+
+            </div>
+            <PhotosGrid />
+            <div className='h-screen' />
         </div>
     )
 }
