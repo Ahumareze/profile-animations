@@ -38,7 +38,7 @@ function PhotosGrid() {
             scrollTrigger: {
                 trigger: container,
                 start: 'top 90%',
-                end: '10% 40%',
+                end: '10% 20%',
                 // markers: true,
                 scrub: true
             }

@@ -5,6 +5,8 @@ import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitTextAnimations from '../../components/texts/SplitTextAnimations';
 import PhotosGrid from './photosGrid/PhotosGrid';
+import Works from './works/Works';
+import AnimatedStrip from './AnimatedStrip';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -83,7 +85,7 @@ function About() {
     }
 
     return (
-        <div className='min-h-screen w-full'>
+        <div className='min-h-screen w-full  bg-[#ccccff]'>
             <div className='h-fit w-[200px] bg-white/20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[100] rounded-xl shadow-md' ref={absoluteCardRef} >
                 <div className='h-[5px] w-[10px] rounded-2xl bg-white p-0' id='about-loader-indicator'>
                     <div className='h-full w-full bg-[#ddd] rounded-xl overflow-hidden hover:rounded-[50%] duration-300 ease-in-out'>
@@ -96,7 +98,7 @@ function About() {
                 </div>
             </div>
             {!isPageVisible && <Loader />}
-            <div className='h-screen w-full bg-white p-5 md:p-10 flex flex-col'>
+            <div className='h-screen w-full bg-[#ccccff] p-5 md:p-10 flex flex-col'>
                 <div>
                     <div className='flex items-center gap-0 overflow-hidden'>
                         {'ABOUT'.split('').map((string, index) => (
@@ -127,10 +129,10 @@ function About() {
                     </div>
                 </div>
             </div>
-            <div className='h-[50px] w-full bg-yellow-500 mt-10'>
-
-            </div>
+            
+            <AnimatedStrip />
             <PhotosGrid />
+            <Works />
             <div className='h-screen' />
         </div>
     )
