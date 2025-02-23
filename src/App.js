@@ -3,6 +3,8 @@ import Drinks from './pages/drinks/Drinks'
 import { createBrowserRouter } from 'react-router-dom'
 import Home from './pages/Home'
 import Furniture from './pages/furniture/Furniture'
+// import Brymo from './pages/brymo/Brymo'
+import About from './pages/about/About'
 
 export const routes = createBrowserRouter([
   {
@@ -12,6 +14,10 @@ export const routes = createBrowserRouter([
   {
     path: '/spylt',
     element: <Drinks />
+  },
+  {
+    path: '/about',
+    element: <About />
   },
   {
     path: '/future-furnitures',
