@@ -73,7 +73,7 @@ function About() {
             opacity: 1,
             // duration: 0.7, 
             ease: "power4.out",
-            stagger: {amount: 0.35},
+            stagger: {amount: 0.45},
             delay: 0.5
         })
 
@@ -89,7 +89,7 @@ function About() {
     return (
         <div className='min-h-screen w-full bg-[#ccccff]'>
             <div className='relative w-full'>
-                <Header />
+                <Header isPageVisible={isPageVisible} />
             </div>
             <div className='h-fit w-[200px] bg-white/20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[300] rounded-xl shadow-md' ref={absoluteCardRef} >
                 <div className='h-[5px] w-[10px] rounded-2xl bg-white p-0' id='about-loader-indicator'>
@@ -137,7 +137,7 @@ function About() {
             
             <AnimatedStrip />
             <PhotosGrid />
-            <div className='bg-[#7f3b2d]'>
+            <div className=''>
                 <Works />
                 <ExtraDetails />
             </div>

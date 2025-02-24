@@ -33,17 +33,28 @@ function Home() {
                             <p className='text-black/70'>React 🔸 Gsap 🔸 Tailwind CSS</p>
                         </div>
                     </a>
-                    <a href='/future-furnitures'>
-                        <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] duration-300 ease-in-out'>
+                    {/* <a href='/future-furnitures'> */}
+                        <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] duration-300 ease-in-out cursor-not-allowed'>
+                            <img
+                                src='/projects/about-project.png'
+                                alt='rhymez like dimez'
+                                className='w-full rounded-xl max-h-[400px] object-cover'
+                            />
+                            <p className='mt-5 mb-2 text-lg text-black/70 font-medium'>Coming soon 🔒</p>
+                            <p className='text-black/70'>Next Js 🔸 Three Js 🔸 GSAP 🔸 WebGl 🔸 Tailwind CSS</p>
+                        </div>
+                    {/* </a> */}
+                    {/* <a href='/future-furnitures'> */}
+                    <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] duration-300 ease-in-out cursor-not-allowed'>
                             <img
                                 src='/furniture-hero-image.png'
                                 alt='rhymez like dimez'
                                 className='w-full rounded-xl max-h-[400px] object-cover'
                             />
-                            <p className='mt-5 mb-2 text-lg text-black/70'>Coming soon</p>
+                            <p className='mt-5 mb-2 text-lg text-black/70'>Coming soon 🔒</p>
                             <p className='text-black/70'>React 🔸 Gsap 🔸 Tailwind CSS</p>
                         </div>
-                    </a>
+                    {/* </a> */}
                 </div>
                 <div className='w-full py-10 pb-20 flex items-center justify-center'>
                     <a href="https://ifeanyicodes.com" target="_blank">

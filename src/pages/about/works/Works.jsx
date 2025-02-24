@@ -41,7 +41,7 @@ function Works() {
                     src='/rpg-game.png'
                     alt='secure'
                 />
-                <h1 className='font-black text-5xl md:text-6xl text-center text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[51]'>4+ Years of building Interractive & scalable softwares</h1>
+                <h1 className='font-black text-5xl md:text-6xl text-center text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[51] leading-[130%] md:leading-[130%]'>4+ Years of building Interractive & Scalable Softwares</h1>
             </div>
             <WorkListing />
         </div>
