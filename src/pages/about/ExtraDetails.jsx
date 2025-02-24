@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Reviews from './Reviews';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -63,18 +64,18 @@ export default function ExtraDetails(){
     // }, {scope: extraDetailsContainerRef})
 
     return(
-        <div className='h-screen w-full bg-[#7f3b2d] flex flex-col items-center  px-[20px]' ref={extraDetailsContainerRef}>
-            <div className="w-full flex items-center justify-center flex-1">
+        <div className='w-full bg-[#7f3b2d] flex flex-col items-center relative px-[20px]' ref={extraDetailsContainerRef}>
+            <div className="w-full flex items-center justify-center flex-1 py-20 my-10">
                 <div className="text-[#faeade] text-center" ref={textRef}>
                     <div className='flex items-center justify-center gap-0 h-fit overflow-hidden'>
                         {'IFEANYI'.split('').map((string, index) => (
-                            <div key={index} className='text-5xl md:text-7xl font-bold relative opacity-0' id={'splyt-ifeanyi-title'}>
+                            <div key={index} className='text-4xl md:text-5xl font-bold relative opacity-0' id={'splyt-ifeanyi-title'}>
                                 {string}
                             </div>
                         ))}
                         <div className='w-[30px]' />
                         {'AHUMAREZE'.split('').map((string, index) => (
-                            <div key={index} className='text-5xl md:text-7xl font-bold relative opacity-0' id={'splyt-ifeanyi-title'}>
+                            <div key={index} className='text-4xl md:text-5xl font-bold relative opacity-0' id={'splyt-ifeanyi-title'}>
                                 {string}
                             </div>
                         ))}
@@ -87,30 +88,26 @@ export default function ExtraDetails(){
                     </div>
                     <div className='flex items-center justify-center gap-0 h-fit overflow-hidden flex-wrap' ref={textRef}>
                         {'CREATIVE'.split('').map((string, index) => (
-                            <div key={index} className='text-5xl md:text-7xl font-bold relative opacity-0' id={'splyt-ifeanyi-title'}>
+                            <div key={index} className='text-4xl md:text-5xl font-bold relative opacity-0' id={'splyt-ifeanyi-title'}>
                                 {string}
                             </div>
                         ))}
                         <div className='w-[30px]' />
-                        {'FRONTEND'.split('').map((string, index) => (
-                            <div key={index} className='text-5xl md:text-7xl font-bold relative opacity-0' id={'splyt-ifeanyi-title'}>
+                        {'SOFTWARE'.split('').map((string, index) => (
+                            <div key={index} className='text-4xl md:text-5xl font-bold relative opacity-0' id={'splyt-ifeanyi-title'}>
                                 {string}
                             </div>
                         ))}
                          <div className='w-[30px]' />
                         {'DEVELOPER'.split('').map((string, index) => (
-                            <div key={index} className='text-5xl md:text-7xl font-bold relative opacity-0' id={'splyt-ifeanyi-title'}>
+                            <div key={index} className='text-4xl md:text-5xl font-bold relative opacity-0' id={'splyt-ifeanyi-title'}>
                                 {string}
                             </div>
                         ))}
                     </div>
                 </div>
             </div>
-            <div className="bg-[#7f3b2d] py-10 text-center text-white/70 flex gap-10 items-center">
-                <a href='https://ifeanyicodes.com' target='_blank'>www.ifeanyicodes.com</a>
-                ⚡️
-                <a href='mailto:ifeanyicodes@gmail.com' target='_blank'>ifeanyicodes@gmail.com</a>
-            </div>
+            <Reviews />
         </div>
     )
 }

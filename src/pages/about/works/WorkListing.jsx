@@ -34,7 +34,7 @@ function WorkListing() {
 
     return (
         <div className='w-[100vw] h-fit bg-black overflow-x-hidden' ref={containerRef}>
-            <div className='h-[90vh] w-fit flex items-center p-10 py-20 gap-10' ref={listingContainerRef}>
+            <div className='h-screen w-fit flex items-center p-10 py-20 gap-10' ref={listingContainerRef}>
                 <div className='h-full min-w-[600px] max-w-[600px] bg-white/30 rounded-xl' />
                 <div className='h-full min-w-[600px] max-w-[600px] bg-white/30 rounded-xl' />
                 <div className='h-full min-w-[600px] max-w-[600px] bg-white/30 rounded-xl' />

@@ -7,14 +7,25 @@ gsap.registerPlugin(ScrollTrigger);
 
 function PhotosGrid() {
     const containerRef = useRef(null);
+    const textRef = useRef(null)
 
     const [displayText, setDisplayText] = useState('Where the cooking happens')
 
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [isInside, setIsInside] = useState(false);
+    const [textSize, setTextSize] = useState({ width: 0, height: 0 });
+
+    useEffect(() => {
+        if (textRef.current) {
+          const { offsetWidth, offsetHeight } = textRef.current;
+          setTextSize({ width: offsetWidth, height: offsetHeight });
+        }
+      }, []);
 
     const handleMouseMove = (e) => {
         const { left, top } = e.currentTarget.getBoundingClientRect();
+        // const x = e.clientX - left;
+        // const y = e.clientY - top;
         const x = e.clientX - left;
         const y = e.clientY - top;
         setPosition({ x, y });
@@ -67,10 +78,11 @@ function PhotosGrid() {
             />
             {isInside && (
                 <motion.span
-                className="absolute text-xl font-bold text-white cursor-pointer"
+                    ref={textRef}
+                    className="absolute text-xl font-bold text-white cursor-pointer w-fit"
                     animate={{
-                        x: position.x - 40,
-                        y: position.y - 10,
+                        x: position.x - textSize.width/2,
+                        y: position.y - textSize.height/2,
                         transition: { type: 'spring', stiffness: 150, damping: 20 },
                     }}
                 >
