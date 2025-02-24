@@ -42,7 +42,7 @@ export default function DrinkItem({title, image, bg, index, pieces, style, backg
 
     return(
         <div 
-            className={`h-[500px] min-w-[650px] max-w-[650px] relative overflow-hidden group ${style}`}
+            className={`h-[500px] w-full md:min-w-[650px] md:max-w-[650px] relative overflow-hidden group ${style}`}
             id={id} 
             ref={containerRef}
             onMouseMove={handleMouseMove}

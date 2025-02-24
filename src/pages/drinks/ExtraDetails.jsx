@@ -63,50 +63,50 @@ export default function ExtraDetails(){
     // }, {scope: extraDetailsContainerRef})
 
     return(
-        <div className='h-screen w-full bg-[#7f3b2d] flex flex-col items-center  px-[20px]' ref={extraDetailsContainerRef}>
+        <div className='h-fit md:h-screen w-full bg-[#7f3b2d] flex flex-col items-center px-[20px] overflow-x-hidden' ref={extraDetailsContainerRef}>
             <div className="w-full flex items-center justify-center flex-1">
-                <div className="text-[#faeade] text-center" ref={textRef}>
+                <div className="text-[#faeade] text-center hidden md:block" ref={textRef}>
                     <div className='flex items-center justify-center gap-0 h-fit overflow-hidden'>
                         {'IFEANYI'.split('').map((string, index) => (
-                            <div key={index} className='text-5xl md:text-7xl font-bold relative opacity-0' id={'splyt-ifeanyi-title'}>
+                            <div key={index} className='text-4xl md:text-5xl font-bold relative opacity-0' id={'splyt-ifeanyi-title'}>
                                 {string}
                             </div>
                         ))}
                         <div className='w-[30px]' />
                         {'AHUMAREZE'.split('').map((string, index) => (
-                            <div key={index} className='text-5xl md:text-7xl font-bold relative opacity-0' id={'splyt-ifeanyi-title'}>
+                            <div key={index} className='text-4xl md:text-5xl font-bold relative opacity-0' id={'splyt-ifeanyi-title'}>
                                 {string}
                             </div>
                         ))}
                     </div>
                     {/* <h1 className="text-5xl md:text-7xl font-bold">IFEANYI AHUMAREZE</h1> */}
                     <div className="h-[50px] w-fit mx-auto relative z-[200]">
-                        <div className="w-[400px] rotate-[-4deg] h-fit text-3xl md:text-5xl font-bold py-5 bg-[#e3a458] border-[5px] border-[#7f3b2d] text-[#7f3b2d] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 absolute">
+                        <div className="w-[400px] rotate-[-4deg] h-fit text-2xl md:text-3xl font-bold py-5 bg-[#e3a458] border-[5px] border-[#7f3b2d] text-[#7f3b2d] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 absolute">
                             OPEN TO WORK
                         </div>
                     </div>
                     <div className='flex items-center justify-center gap-0 h-fit overflow-hidden flex-wrap' ref={textRef}>
                         {'CREATIVE'.split('').map((string, index) => (
-                            <div key={index} className='text-5xl md:text-7xl font-bold relative opacity-0' id={'splyt-ifeanyi-title'}>
+                            <div key={index} className='text-4xl md:text-5xl font-bold relative opacity-0' id={'splyt-ifeanyi-title'}>
                                 {string}
                             </div>
                         ))}
                         <div className='w-[30px]' />
-                        {'FRONTEND'.split('').map((string, index) => (
-                            <div key={index} className='text-5xl md:text-7xl font-bold relative opacity-0' id={'splyt-ifeanyi-title'}>
+                        {'SOFTWARE'.split('').map((string, index) => (
+                            <div key={index} className='text-4xl md:text-5xl font-bold relative opacity-0' id={'splyt-ifeanyi-title'}>
                                 {string}
                             </div>
                         ))}
-                         <div className='w-[30px]' />
+                        <div className='w-[30px]' />
                         {'DEVELOPER'.split('').map((string, index) => (
-                            <div key={index} className='text-5xl md:text-7xl font-bold relative opacity-0' id={'splyt-ifeanyi-title'}>
+                            <div key={index} className='text-4xl md:text-5xl font-bold relative opacity-0' id={'splyt-ifeanyi-title'}>
                                 {string}
                             </div>
                         ))}
                     </div>
                 </div>
             </div>
-            <div className="bg-[#7f3b2d] py-10 text-center text-white/70 flex gap-10 items-center">
+            <div className="bg-[#7f3b2d] py-10 text-center text-white/70 flex flex-col md:flex-row gsp-2 md:gap-10 items-center">
                 <a href='https://ifeanyicodes.com' target='_blank'>www.ifeanyicodes.com</a>
                 ⚡️
                 <a href='mailto:ifeanyicodes@gmail.com' target='_blank'>ifeanyicodes@gmail.com</a>

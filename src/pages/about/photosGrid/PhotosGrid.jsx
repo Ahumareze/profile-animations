@@ -79,7 +79,7 @@ function PhotosGrid() {
             {isInside && (
                 <motion.span
                     ref={textRef}
-                    className="absolute text-xl font-bold text-white cursor-pointer w-fit"
+                    className="absolute text-lg italic font-medium text-white cursor-pointer w-fit"
                     animate={{
                         x: position.x - textSize.width/2,
                         y: position.y - textSize.height/2,

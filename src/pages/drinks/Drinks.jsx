@@ -35,8 +35,8 @@ function Drinks() {
     return (
         <LoaderContainer backdrop={'bg-[#faeade]'}>
             <div className='w-full bg-[#faeade]'>
-                <div className='h-[100vh] w-full' ref={containerRef}>
-                    <div className='h-[100vh] w-full flex items-center gap-10 md:gap-20 px-10 md:px-20 relative' id='listing-container'>
+                <div className='h-[100vh] hidden md:block w-full' ref={containerRef}>
+                    <div className='h-[100vh] w-full hidden md:flex items-center gap-10 md:gap-20 px-10 md:px-20 relative' id='listing-container'>
                         {/* <div className='h-[400px] min-w-[500px] max-w-[500px]'>
                             <h1 className='text-4xl font-bold'>Explore 3 Unique Flavours</h1>
                         </div> */}
@@ -77,6 +77,44 @@ function Drinks() {
                             backgroud={'/max-choco-backdrop.svg'}
                         />
                     </div>
+                </div>
+                <div className='w-full h-fit space-y-10 flex md:hidden flex-col gap-20 p-[20px] py-20 mt-10'>
+                    <DrinkItem
+                        image={'/spylt-max-choco.webp'}
+                        title={'Chocolate Milk'}
+                        index={1}
+                        bg={'bg-[#bd7c57]'}
+                        pieces={'/split-choco-bars.webp'}
+                        style={''}
+                        backgroud={'/choco-backdrop.svg'}
+                    />
+                    <DrinkItem
+                        image={'/split-strawberry.webp'}
+                        title={'Strawberry Milk'}
+                        index={2}
+                        bg={'bg-[#c03e47]'}
+                        pieces={'/split-berries.webp'}
+                        style={''}
+                        backgroud={'/strawberry-backdrop.svg'}
+                    />
+                    <DrinkItem
+                        image={'/split-milkshake.webp'}
+                        title={'Vanilla Milkshake'}
+                        index={3}
+                        pieces={'/split-wafers.webp'}
+                        bg={'bg-[#d8c5a4]'}
+                        style={''}
+                        backgroud={'/vanilla-backdrop.svg'}
+                    />
+                    <DrinkItem
+                        image={'/split-choco.webp'}
+                        title={'Max Chocolate Milk'}
+                        index={3}
+                        bg={'bg-[#3e3c3a]'}
+                        pieces={'/split-choco-bars.webp'}
+                        style={''}
+                        backgroud={'/max-choco-backdrop.svg'}
+                    />
                 </div>
                 <ExtraDetails />
             </div>
