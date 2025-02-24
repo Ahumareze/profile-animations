@@ -1,5 +1,6 @@
 import gsap from 'gsap';
 import React, { useEffect, useRef } from 'react'
+import WorkListing from './WorkListing';
 
 function Works() {
     const containerRef = useRef(null);
@@ -42,9 +43,7 @@ function Works() {
                 />
                 <h1 className='font-black text-5xl md:text-6xl text-center text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[51]'>4+ Years of building Interractive & scalable softwares</h1>
             </div>
-            <div className='bg-black h-screen w-full'>
-
-            </div>
+            <WorkListing />
         </div>
     )
 }

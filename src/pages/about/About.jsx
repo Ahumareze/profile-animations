@@ -7,6 +7,7 @@ import SplitTextAnimations from '../../components/texts/SplitTextAnimations';
 import PhotosGrid from './photosGrid/PhotosGrid';
 import Works from './works/Works';
 import AnimatedStrip from './AnimatedStrip';
+import ExtraDetails from './ExtraDetails';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -132,7 +133,10 @@ function About() {
             
             <AnimatedStrip />
             <PhotosGrid />
-            <Works />
+            <div className='bg-[#7f3b2d]'>
+                <Works />
+                <ExtraDetails />
+            </div>
             <div className='h-screen' />
         </div>
     )

@@ -63,7 +63,7 @@ function PhotosGrid() {
             />
             <PhotoContainer
                 photo={'/sketch.jpg'}
-                handleHover={() => setDisplayText('Occasional sketches with my free time')}
+                handleHover={() => setDisplayText('Occasional sketches (more on my pinterest)')}
             />
             {isInside && (
                 <motion.span
