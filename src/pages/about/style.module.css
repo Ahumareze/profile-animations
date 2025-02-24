@@ -1,0 +1,12 @@
+.animatedStrip{
+    animation: slider 10s linear infinite;
+}
+
+@keyframes slider {
+    0% {
+        left: 0;
+    }
+      100% {
+        left: -100%;
+    }
+}

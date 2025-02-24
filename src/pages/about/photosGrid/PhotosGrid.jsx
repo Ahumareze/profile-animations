@@ -81,8 +81,10 @@ function PhotosGrid() {
                     ref={textRef}
                     className="absolute text-lg italic font-medium text-white cursor-pointer w-fit"
                     animate={{
-                        x: position.x - textSize.width/2,
-                        y: position.y - textSize.height/2,
+                        // x: position.x - textSize.width/2,
+                        // y: position.y - textSize.height/2,
+                        x: position.x - 100,
+                        y: position.y - 5,
                         transition: { type: 'spring', stiffness: 150, damping: 20 },
                     }}
                 >

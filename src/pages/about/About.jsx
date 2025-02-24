@@ -8,6 +8,7 @@ import PhotosGrid from './photosGrid/PhotosGrid';
 import Works from './works/Works';
 import AnimatedStrip from './AnimatedStrip';
 import ExtraDetails from './ExtraDetails';
+import Header from './Header';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -86,8 +87,11 @@ function About() {
     }
 
     return (
-        <div className='min-h-screen w-full  bg-[#ccccff]'>
-            <div className='h-fit w-[200px] bg-white/20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[100] rounded-xl shadow-md' ref={absoluteCardRef} >
+        <div className='min-h-screen w-full bg-[#ccccff]'>
+            <div className='relative w-full'>
+                <Header />
+            </div>
+            <div className='h-fit w-[200px] bg-white/20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[300] rounded-xl shadow-md' ref={absoluteCardRef} >
                 <div className='h-[5px] w-[10px] rounded-2xl bg-white p-0' id='about-loader-indicator'>
                     <div className='h-full w-full bg-[#ddd] rounded-xl overflow-hidden hover:rounded-[50%] duration-300 ease-in-out'>
                         <img
@@ -100,7 +104,7 @@ function About() {
             </div>
             {!isPageVisible && <Loader />}
             <div className='h-screen w-full bg-[#ccccff] p-5 md:p-10 flex flex-col'>
-                <div>
+                <div className='w-full flex-1 flex flex-col justify-center space-y-2'>
                     <div className='flex items-center gap-0 overflow-hidden'>
                         {'ABOUT'.split('').map((string, index) => (
                             <div key={index} className={`text-5xl md:text-9xl font-black relative top-[150px]`} id='page-title' ref={pageTitleRef}>
@@ -108,24 +112,24 @@ function About() {
                             </div>
                         ))}
                     </div>
-                    <p className='opacity-0 text-lg' id='about-sub-text'>CREATIVE FRONTEND DEVELOPER</p>
+                    <p className='opacity-0 text-xl' id='about-sub-text'>CREATIVE SOFTWARE DEVELOPER</p>
                 </div>
-                <div className='flex-1 w-full flex items-end gap-2'>
+                <div className='w-full flex items-end gap-2'>
                     <div className='flex-1'>
                         <p className='opacity-0 text-lg' id='about-sub-text'>[IN CONSTRUCTION 🚧]</p>
                     </div>
-                    <div className='text-lg space-y-1'>
+                    <div className='text-lg space-y-1 text-right'>
                         <div className='overflow-hidden'>
-                            <p className='opacity-0 relative top-[50px]' id='about-text'>Created this cool portfolio website for a really talented motion</p>
+                            <p className='opacity-0 relative top-[50px]' id='about-text'>Software Developer with a knack for creating smooth, user-friendly</p>
                         </div>
                         <div className='overflow-hidden'>
-                            <p className='opacity-0 relative top-[50px]' id='about-text'>Created this cool portfolio website for a really talented motion</p>
+                            <p className='opacity-0 relative top-[50px]' id='about-text'>experiences using Javascript frameworks. Whether it’s building clean</p>
                         </div>
                         <div className='overflow-hidden'>
-                            <p className='opacity-0 relative top-[50px]' id='about-text'>Created this cool portfolio website for a really talented motion</p>
+                            <p className='opacity-0 relative top-[50px]' id='about-text'>web interfaces or versatile mobile apps, I’m passionate</p>
                         </div>
                         <div className='overflow-hidden'>
-                            <p className='opacity-0 relative top-[50px]' id='about-text'>Created this cool portfolio website for a really talented motion</p>
+                            <p className='opacity-0 relative top-[50px]' id='about-text'> about building products people enjoy using.</p>
                         </div>
                     </div>
                 </div>
