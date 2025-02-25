@@ -2,8 +2,8 @@ import React from 'react'
 
 function Wizkid() {
     return (
-        <div>
-            
+        <div className='h-screen w-full bg-green-500'>
+
         </div>
     )
 }

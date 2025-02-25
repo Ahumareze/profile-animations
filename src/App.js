@@ -5,7 +5,6 @@ import Home from './pages/Home'
 import Furniture from './pages/furniture/Furniture'
 // import Brymo from './pages/brymo/Brymo'
 import About from './pages/about/About'
-import ThreeDimensionProduct from './pages/threeDimensionProduct/ThreeDimensionProduct'
 import Wizkid from './pages/wizkid/Wizkid'
 
 export const routes = createBrowserRouter([
