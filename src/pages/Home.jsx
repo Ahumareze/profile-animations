@@ -18,23 +18,45 @@ function Home() {
                                 alt='rhymez like dimez'
                                 className='w-full rounded-xl max-h-[400px]'
                             />
-                            <p className='mt-5 mb-2 text-lg text-black/70'>Created this cool portfolio website for a really talented motion designer to showcase his amazing talent</p>
-                            <p className='text-black/70'>Next JS 🔸 Gsap 🔸 Tailwind CSS</p>
+                            <p className='mt-5 mb-2 text-lg font-medium text-black/70'>Created this cool portfolio website for a really talented motion designer to showcase his amazing talent</p>
+                            <p className='text-black/70 text-sm'>Next JS 🔸 Gsap 🔸 Tailwind CSS</p>
+                        </div>
+                    </a>
+                    <a href='https://macos-portfolio.ifeanyicodes.com/'>
+                        <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] duration-300 ease-in-out'>
+                            <img
+                                src='/projects/desktop-portfolio.png'
+                                alt='ifeanyi ahumareze macOs themed portfolio'
+                                className='w-full rounded-xl max-h-[400px] object-cover'
+                            />
+                            <p className='mt-5 mb-2 text-lg font-medium text-black/70'>I created a MacOs themed version of my portfolio website. Fast, interactive and easy to navigate.</p>
+                            <p className='text-black/70 text-sm'>React 🔸 Tailwind CSS</p>
                         </div>
                     </a>
                     <a href='/spylt'>
                         <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] duration-300 ease-in-out'>
                             <img
                                 src='/splyt-project.png'
-                                alt='rhymez like dimez'
+                                alt='spylt project'
                                 className='w-full rounded-xl max-h-[400px] object-cover'
                             />
-                            <p className='mt-5 mb-2 text-lg text-black/70'>An interactive product listing feature for Spylt. Features scroll to swipe, 3d hover effect and some really cool animations</p>
-                            <p className='text-black/70'>React 🔸 Gsap 🔸 Tailwind CSS</p>
+                            <p className='mt-5 mb-2 text-lg font-medium text-black/70'>An interactive product listing feature for Spylt. Features scroll to swipe, 3d hover effect and some really cool animations</p>
+                            <p className='text-black/70 text-sm'>React 🔸 Gsap 🔸 Tailwind CSS</p>
                         </div>
                     </a>
-                    {/* <a href='/future-furnitures'> */}
+                    {/* <a href='/spylt'> */}
                         <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] duration-300 ease-in-out cursor-not-allowed'>
+                            <img
+                                src='/projects/threeJsGameImage.png'
+                                alt='threejs project'
+                                className='w-full rounded-xl max-h-[400px] object-cover'
+                            />
+                            <p className='mt-5 mb-2 text-lg font-medium text-black/70'>Fully customizable & interactive 3D web game. (Coming soon 🕒)</p>
+                            <p className='text-black/70 text-sm'>Three Js 🔸 R3F 🔸 WebGL</p>
+                        </div>
+                    {/* </a> */}
+                    {/* <a href='/future-furnitures'> */}
+                        {/* <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] duration-300 ease-in-out cursor-not-allowed'>
                             <img
                                 src='/projects/about-project.png'
                                 alt='rhymez like dimez'
@@ -42,10 +64,10 @@ function Home() {
                             />
                             <p className='mt-5 mb-2 text-lg text-black/70 font-medium'>Coming soon 🔒</p>
                             <p className='text-black/70'>Next Js 🔸 Three Js 🔸 GSAP 🔸 WebGl 🔸 Tailwind CSS</p>
-                        </div>
+                        </div> */}
                     {/* </a> */}
                     {/* <a href='/future-furnitures'> */}
-                    <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] duration-300 ease-in-out cursor-not-allowed'>
+                    {/* <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] duration-300 ease-in-out cursor-not-allowed'>
                             <img
                                 src='/furniture-hero-image.png'
                                 alt='rhymez like dimez'
@@ -53,7 +75,7 @@ function Home() {
                             />
                             <p className='mt-5 mb-2 text-lg text-black/70'>Coming soon 🔒</p>
                             <p className='text-black/70'>React 🔸 Gsap 🔸 Tailwind CSS</p>
-                        </div>
+                        </div> */}
                     {/* </a> */}
                 </div>
                 <div className='w-full py-10 pb-20 flex items-center justify-center'>
