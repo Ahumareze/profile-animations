@@ -6,6 +6,7 @@ import Furniture from './pages/furniture/Furniture'
 // import Brymo from './pages/brymo/Brymo'
 import About from './pages/about/About'
 import Wizkid from './pages/wizkid/Wizkid'
+import Ege from './pages/ege/Ege'
 
 export const routes = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ export const routes = createBrowserRouter([
   {
     path: '/spylt',
     element: <Drinks />
+  },
+  {
+    path: '/ege',
+    element: <Ege />
   },
   {
     path: '/about',
