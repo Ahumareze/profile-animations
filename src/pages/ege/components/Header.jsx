@@ -19,7 +19,7 @@ function Header({fireAnimations}) {
     return (
         <div className='py-5 w-[100vw] px-[20px] md:px-[50px] fixed top-0 left-0 flex items-center justify-between'>
             <a href='/ege'>
-                <h3 className='text-lg text-white font-medium relative bottom-10 opacity-0' id='ege-header-items'>Ege brazokivic 👋</h3>
+                <h3 className='text-lg text-white font-medium relative bottom-10 opacity-0' id='ege-header-items'>Ege Berkin 👋</h3>
             </a>
             <div className='flex items-center gap-5 md:gap-10'>
                 <a href='#' className='text-base text-white/70 relative bottom-10 opacity-0' id='ege-header-items'>Shop</a>

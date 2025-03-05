@@ -61,7 +61,7 @@ function TitleCardsAnimations({animationCompleted}) {
         tl.to('.ege-card-loader', {
             top: -500,
             duration: 2.5,
-            stagger: {amount: 0.5},
+            stagger: {amount: 0.25},
             ease: "power3.inOut",
             onComplete: () => animationCompleted()
         })
