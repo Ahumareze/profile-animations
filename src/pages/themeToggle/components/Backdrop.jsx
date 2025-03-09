@@ -29,7 +29,7 @@ function Backdrop({children, isDarkMode}) {
 
         tl.to('#rounded-backdrop', {
             top: 15,
-            height: 60,
+            height: 50,
             width: 500,
             borderRadius: 40
         })
@@ -40,7 +40,7 @@ function Backdrop({children, isDarkMode}) {
             <div className='absolute top-0 left-0 h-screen w-full'>
                 <div className='h-full w-full relative bg-white'>
                     <div 
-                        className='absolute top-[15px] left-1/2 -translate-x-1/2 w-[500px] h-[60px] bg-black rounded-full flex items-center justify-end' 
+                        className='absolute top-[15px] left-1/2 -translate-x-1/2 w-[500px] h-[50px] bg-black rounded-full flex items-center justify-end' 
                         id='rounded-backdrop' 
                     />
                 </div>
