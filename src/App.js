@@ -7,6 +7,8 @@ import Furniture from './pages/furniture/Furniture'
 import About from './pages/about/About'
 import Wizkid from './pages/wizkid/Wizkid'
 import Ege from './pages/ege/Ege'
+import HoverCards from './pages/hover-cards/HoverCards'
+import ThemeToggle from './pages/themeToggle/ThemeToggle'
 
 export const routes = createBrowserRouter([
   {
@@ -20,6 +22,14 @@ export const routes = createBrowserRouter([
   {
     path: '/ege',
     element: <Ege />
+  },
+  {
+    path: 'hover-cards',
+    element: <HoverCards />
+  },
+  {
+    path: 'theme-toggle',
+    element: <ThemeToggle />
   },
   {
     path: '/about',

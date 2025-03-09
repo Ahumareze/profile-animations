@@ -28,11 +28,10 @@ function Ege() {
                 <AwwwardsCard
                     fireAnimations={titleCardsAnimationsDone}
                 />
-                <div className='h-full w-full absolute top-0 left-0'>
+                {/* <div className='h-full w-full absolute top-0 left-0'>
                     <MouseTrail />
-                </div>
+                </div> */}
             </div>
-            
         </div>
     )
 }
