@@ -6,6 +6,7 @@ import { FaVolumeXmark } from "react-icons/fa6";
 import { IoPlaySkipBack, IoPlaySkipForward } from "react-icons/io5";
 import { albums } from '../../../constants/music';
 import { AnimatePresence, motion } from 'motion/react';
+import { IoMdCloseCircle } from "react-icons/io";
 
 const imageCover = '/morayo.jpeg'
 
@@ -16,7 +17,7 @@ function DynamicIsland({handleClick, isDarkMode}) {
     const currentlyPlayingRef = useRef(null);
     const playContainerRef = useRef(null);
     const toggleButtonRef = useRef(null);
-    const volumeSlideRef = useRef(null);
+    const closeBtnRef = useRef(null);
 
     const [showDetails, setShowDetails] = useState(false);
 
@@ -64,11 +65,21 @@ function DynamicIsland({handleClick, isDarkMode}) {
 
         //hide the toggle button
         tl.to(toggleButtonRef.current, {
+            scale: 0,
             right: -100,
-            width: 0,
             opacity: 0,
-            duration: 0.5
+            duration: 0.7
         }, "-0.1")
+
+        tl.fromTo(closeBtnRef.current, {
+            display: 'flex',
+            opacity: 0,
+            scale: 0.5
+        }, {
+            opacity: 1,
+            display: 'flex',
+            scale: 1
+        })
 
         //expand the play container
         tl.to(playContainerRef.current, {
@@ -117,7 +128,7 @@ function DynamicIsland({handleClick, isDarkMode}) {
             </div>
             <div className={`fixed top-[15px] left-1/2 -translate-x-1/2 h-fit w-[500px] px-3 py-[7px] overflow-hidden  border ${isDarkMode ? 'bg-[#1a1a1a] border-white/10' : 'bg-black border-black'} rounded-3xl duration-300 ease-in-out`}>
                 <div className='flex items-center justify-between h-[35px] w-full gap-2  z-[100]'>
-                    <div className='w-fit flex h-full items-center gap-3 text-white cursor-pointer relative' ref={playContainerRef} onClick={handleShowModalAnimation}>
+                    <div className='flex-1 flex h-full items-center gap-3 text-white cursor-pointer relative' ref={playContainerRef} onClick={handleShowModalAnimation}>
                         <img 
                             className='h-[35px] w-[40px] rounded-md relative' 
                             src={selectedAlbum.cover}
@@ -126,15 +137,16 @@ function DynamicIsland({handleClick, isDarkMode}) {
                         />
                         <div className='flex flex-1 items-center'>
                             <p className='relative' ref={currentlyPlayingRef}>{selectedAlbum.title}</p>
-                            
                         </div>
-                        <FaPlayCircle size={22} className='' />
                     </div>
                     <div className='h-full w-[100px] rounded-full bg-orange-500 cursor-pointer relative' ref={toggleButtonRef} onClick={handleClick}>
                         {/* <IonToggle aria-label="Success toggle" color="success" checked={true}></IonToggle> */}
                     </div>
+                    <div ref={closeBtnRef} className='hidden'>
+                        <IoMdCloseCircle size={25} className='text-white/50 cursor-pointer' />
+                    </div>
                 </div>
-                <div className='h-[0px] w-full z-[45] grid grid-cols-2 gap-5  box-border' ref={modalref}>
+                <div className='h-[0px] w-full z-[45] grid grid-cols-2 gap-5 overflow-hidden box-border' ref={modalref}>
                     <div className='w-full h-full overflow-hidden relative'>
                     <AnimatePresence>
                         <motion.div 
