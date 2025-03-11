@@ -18,6 +18,7 @@ function DynamicIsland({handleClick, isDarkMode}) {
     const playContainerRef = useRef(null);
     const toggleButtonRef = useRef(null);
     const closeBtnRef = useRef(null);
+    const controlsRef = useRef(null)
 
     const [showDetails, setShowDetails] = useState(false);
 
@@ -31,8 +32,6 @@ function DynamicIsland({handleClick, isDarkMode}) {
     }, [selectedIndex])
 
     const handleShowModalAnimation = () => {
-
-        console.log('here')
 
         let tl = gsap.timeline({});
 
@@ -62,7 +61,14 @@ function DynamicIsland({handleClick, isDarkMode}) {
             x: -50,
         },"-=0.5")
 
-        
+        tl.fromTo(controlsRef.current, {
+            scale: 0.5,
+            opacity: 0
+        }, {
+            scale: 1,
+            opacity: 1
+        }, "-=0.4")
+
 
         //hide the toggle button
         tl.to(toggleButtonRef.current, {
@@ -86,12 +92,58 @@ function DynamicIsland({handleClick, isDarkMode}) {
         tl.to(playContainerRef.current, {
             width: '100%',
         },"-=0.1");
-
-        console.log('hello world')
     };
 
+    const handleHideModalAnimation = () => {
+        let tl = gsap.timeline({});
+
+        tl.to(modalref.current, {
+            height: 0,
+            paddingTop: 0
+        })
+
+        tl.to(modalImageRef.current, {
+            opacity: 0,
+            height: 35,
+            width: 40
+        }, "-=0.4")
+
+        tl.fromTo(controlsRef.current, {
+            scale: 1,
+            opacity: 1
+        },{
+            scale: 0.5,
+            opacity: 0
+        }, "-=0.6")
+
+        tl.to(dynamicIslandImage.current, {
+            top: 0,
+            opacity: 1
+        }, "-=0.5");
+
+        tl.to(currentlyPlayingRef.current, {
+            x: 0,
+        },"-=0.5");
+
+        //show the toggle button
+
+        tl.to(closeBtnRef.current, {
+            display: 'none',
+            opacity: 0,
+            scale: 0.5
+        }, "-0.4")
+
+        tl.to(toggleButtonRef.current, {
+            scale: 1,
+            right: 0,
+            opacity: 1,
+            duration: 0.4,
+            // delay: 0.1
+        })
+    }
+
     const handleNextClick = () => {
-        if(selectedIndex === 2){
+        if(selectedIndex === 3){
             setSelectedIndex(0)
         }else{
             setSelectedIndex(prev => prev + 1)
@@ -100,7 +152,7 @@ function DynamicIsland({handleClick, isDarkMode}) {
 
     const handleBackClick = () => {
         if(selectedIndex === 0){
-            setSelectedIndex(2)
+            setSelectedIndex(3)
         }else{
             setSelectedIndex(prev => prev - 1)
         }
@@ -143,7 +195,7 @@ function DynamicIsland({handleClick, isDarkMode}) {
                     <div className='h-full w-[100px] rounded-full bg-orange-500 cursor-pointer relative' ref={toggleButtonRef} onClick={handleClick}>
                         {/* <IonToggle aria-label="Success toggle" color="success" checked={true}></IonToggle> */}
                     </div>
-                    <div ref={closeBtnRef} className='hidden'>
+                    <div ref={closeBtnRef} className='hidden' onClick={handleHideModalAnimation}>
                         <IoMdCloseCircle size={25} className='text-white/50 cursor-pointer' />
                     </div>
                 </div>
@@ -167,7 +219,7 @@ function DynamicIsland({handleClick, isDarkMode}) {
                         </motion.div>
                     </AnimatePresence>
                     </div>
-                    <div className='w-full h-full flex flex-col gap-5 justify-end items-center pb-10'>
+                    <div className='w-full h-full flex flex-col gap-5 justify-end items-center pb-10' ref={controlsRef}>
                         <div className='h-fit w-full bg-white/20 rounded-lg flex items-center gap-2 p-2 text-white font-medium'>
                             <img
                                 src={selectedAlbum.artist.image}
