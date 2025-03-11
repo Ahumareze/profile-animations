@@ -5,7 +5,7 @@ export const albums = [
             image: '/music/wizkid.jpeg'
         },
         cover: '/music/morayo.jpeg',
-        title: 'Morayo'
+        title: 'Kese (Dance)'
     },
     {
         artist: {
@@ -14,6 +14,14 @@ export const albums = [
         },
         cover: '/music/born-in-the-wild.jpeg',
         title: 'Born In The Wild'
+    },
+    {
+        artist: {
+            name: 'Joeboy',
+            image: '/music/joeboy.jpeg'
+        },
+        cover: '/music/body-and-soul.jpeg',
+        title: 'Duffel Bag'
     },
     {
         artist: {

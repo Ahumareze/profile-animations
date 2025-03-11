@@ -24,6 +24,7 @@ function DynamicIsland({handleClick, isDarkMode}) {
     
     const [selectedIndex, setSelectedIndex] = useState(0)
     const [selectedAlbum, setSelectedAlbum] = useState(albums[selectedIndex]);
+    const [isPlaying, setIsPlaying] = useState(true);
 
     useEffect(() => {
         setSelectedAlbum(albums[selectedIndex])
@@ -179,7 +180,13 @@ function DynamicIsland({handleClick, isDarkMode}) {
                         
                         <div className='w-full h-fit flex items-center justify-between text-white px-5'>
                             <IoPlaySkipBack size={25} className='cursor-pointer' onClick={handleBackClick} />
-                                <FaPauseCircle size={45} className='cursor-pointer' />
+                                <div className='cursor-pointer' onClick={() => setIsPlaying(prev => !prev)}>
+                                    {isPlaying ? (
+                                        <FaPauseCircle size={45}/>
+                                    ): (
+                                        <FaPlayCircle size={45}/>
+                                    )}
+                                </div>
                             <IoPlaySkipForward size={25} className='cursor-pointer' onClick={handleNextClick} />
                         </div>
                     </div>
