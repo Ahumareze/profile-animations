@@ -1,7 +1,7 @@
 import gsap from 'gsap';
 import React, { useEffect, useRef, useState } from 'react';
 // import { IonToggle } from '@ionic/react';
-import { FaPauseCircle, FaPlayCircle, FaVolumeUp } from "react-icons/fa";
+import { FaPauseCircle, FaPlayCircle, FaUserCircle, FaVolumeUp } from "react-icons/fa";
 import { FaVolumeXmark } from "react-icons/fa6";
 import { IoPlaySkipBack, IoPlaySkipForward } from "react-icons/io5";
 import { albums } from '../../../constants/music';
@@ -177,7 +177,11 @@ function DynamicIsland({handleClick, isDarkMode}) {
     return (
         <div className=''>
             <div className='fixed top-[15px] left-[15px]'>
-                <img className='h-[20px] w-[30px] bg-red-500' />
+                <img 
+                    className='h-[40px]' 
+                    src='/music/spotify.webp'
+                    alt=''
+                />
             </div>
             <div className={`fixed top-[15px] left-1/2 -translate-x-1/2 h-fit w-[500px] px-3 py-[7px] overflow-hidden  border ${isDarkMode ? 'bg-[#1a1a1a] border-white/10' : 'bg-black border-black'} rounded-3xl duration-300 ease-in-out`}>
                 <div className='flex items-center justify-between h-[35px] w-full gap-2  z-[100]'>
@@ -223,7 +227,7 @@ function DynamicIsland({handleClick, isDarkMode}) {
                         <div className='h-fit w-full bg-white/20 rounded-lg flex items-center gap-2 p-2 text-white font-medium'>
                             <img
                                 src={selectedAlbum.artist.image}
-                                alt='wizkid'
+                                alt={selectedAlbum.artist.name}
                                 className='h-[30px] w-[30px] rounded-full object-cover'
                             />
                             <p>{selectedAlbum.artist.name}</p>
@@ -243,6 +247,9 @@ function DynamicIsland({handleClick, isDarkMode}) {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className='fixed top-[15px] right-[15px] h-[30px] w-[30px] flex items-center jsutify-center'>
+                <FaUserCircle className={`text-2xl ${isDarkMode ? 'text-white/70' : 'text-black/80'} duration-300 ease-in-out delay-200`} />
             </div>
         </div>
     )

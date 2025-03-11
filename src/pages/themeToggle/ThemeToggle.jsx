@@ -3,6 +3,8 @@ import Toggle from './components/Toggle'
 import Backdrop from './components/Backdrop';
 import DynamicIsland from './components/DynamicIsland';
 import { AnimatePresence, motion } from 'motion/react'
+import { albums } from '../../constants/music';
+import { FaCirclePlay } from 'react-icons/fa6';
 
 function ThemeToggle() {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -27,19 +29,35 @@ function ThemeToggle() {
             <div>
                 <div className="w-full p-10 mt-20">
                     <div className={`text-center delay-300 duration-300 ease-in-out ${isDarkMode ? 'text-white' : 'text-black'}`}>
-                        <h1 className='text-4xl font-bold'>Browse Shipping Rates</h1>
-                        <p className='text-xl mt-2'>More details about this page</p>
+                        <h1 className='text-4xl font-bold'>Spotify Top #3 👑</h1>
+                        <p className='text-xl mt-2'>The biggest songs in the whole africa, only on Spotify</p>
                     </div>
                     <div className='w-full mt-10 grid grid-cols-2 md:grid-cols-3 gsp-5 md:gap-10'>
-                        {[1,2,3].map(item => (
+                        {[albums[0], albums[1], albums[2]].map((album, index) => (
                             <div 
-                                className={`w-full rounded-lg p-5 flex gap-5 ${isDarkMode ? 'bg-[#1a1a1a] text-white delay-300' : 'bg-[#f5f5f5] text-black delay-100'} duration-300 ease-in-out`}
-                                key={item}
+                                className={`w-full rounded-lg p-5 ${isDarkMode ? 'bg-[#1a1a1a] text-white delay-300' : 'bg-[#f5f5f5] text-black delay-100'} duration-300 ease-in-out relative`}
+                                key={index}
                             >
-                                <div className='w-[200px] h-[300px] bg-[#ddd] rounded-lg' />
-                                <div className='flex-1'>
-                                    <h1 className='text-xl font-medium'>Hello world</h1>
-                                    <p className='mt-2'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,</p>
+                                <img 
+                                    className='w-[200px] h-[200px] bg-[#ddd] rounded-lg mx-auto object-cover'
+                                    alt={album.title}
+                                    src={album.cover}
+                                />
+                                <div className='text-center mt-2'>
+                                    <h1 className='text-xl font-semibold'>{album.title}</h1>
+                                    <p className='mt-1 opacity-80'>{album.streams} Streams</p>
+                                    <div className='h-fit w-fit mx-auto bg-black/20 rounded-lg flex items-center gap-2 p-2 font-medium mt-5'>
+                                        <img
+                                            src={album.artist.image}
+                                            alt={album.artist.name}
+                                            className='h-[30px] w-[30px] rounded-full object-cover'
+                                        />
+                                        <p>{album.artist.name} ⭐️</p>
+                                    </div>
+                                    
+                                </div>
+                                <div className='absolute right-5 bottom-5 h-[50px] w-[50px]'>
+                                    <img src='/music/appleMusic.png' alt='' className='h-full w-full' />
                                 </div>
                             </div>
                         ))}

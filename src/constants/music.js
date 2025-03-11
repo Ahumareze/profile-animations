@@ -5,7 +5,8 @@ export const albums = [
             image: '/music/wizkid.jpeg'
         },
         cover: '/music/morayo.jpeg',
-        title: 'Kese (Dance)'
+        title: 'Kese (Dance)',
+        streams: '25M'
     },
     {
         artist: {
@@ -13,7 +14,8 @@ export const albums = [
             image: '/music/tems.jpeg'
         },
         cover: '/music/born-in-the-wild.jpeg',
-        title: 'Born In The Wild'
+        title: 'Born In The Wild',
+        streams: '34M'
     },
     {
         artist: {
@@ -21,7 +23,8 @@ export const albums = [
             image: '/music/joeboy.jpeg'
         },
         cover: '/music/body-and-soul.jpeg',
-        title: 'Duffel Bag'
+        title: 'Duffel Bag',
+        streams: '88M'
     },
     {
         artist: {
@@ -29,6 +32,7 @@ export const albums = [
             image: '/music/rema.jpeg'
         },
         cover: '/music/heis.jpeg',
-        title: 'HEIS'
+        title: 'HEIS',
+        streams: '18M'
     }
 ]
