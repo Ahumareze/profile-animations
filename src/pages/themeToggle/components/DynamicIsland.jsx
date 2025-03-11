@@ -1,8 +1,11 @@
 import gsap from 'gsap';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 // import { IonToggle } from '@ionic/react';
-import { FaPlayCircle, FaVolumeUp } from "react-icons/fa";
+import { FaPauseCircle, FaPlayCircle, FaVolumeUp } from "react-icons/fa";
 import { FaVolumeXmark } from "react-icons/fa6";
+import { IoPlaySkipBack, IoPlaySkipForward } from "react-icons/io5";
+import { albums } from '../../../constants/music';
+import { AnimatePresence, motion } from 'motion/react';
 
 const imageCover = '/morayo.jpeg'
 
@@ -16,6 +19,14 @@ function DynamicIsland({handleClick, isDarkMode}) {
     const volumeSlideRef = useRef(null);
 
     const [showDetails, setShowDetails] = useState(false);
+
+    
+    const [selectedIndex, setSelectedIndex] = useState(0)
+    const [selectedAlbum, setSelectedAlbum] = useState(albums[selectedIndex]);
+
+    useEffect(() => {
+        setSelectedAlbum(albums[selectedIndex])
+    }, [selectedIndex])
 
     const handleShowModalAnimation = () => {
 
@@ -37,8 +48,11 @@ function DynamicIsland({handleClick, isDarkMode}) {
             opacity: 1,
         }, "-=0.4")
 
-        tl.to(modalImageRef.current, {
-            height: 200,
+        tl.fromTo(modalImageRef.current, {
+            height: 35,
+            width: 40
+        }, {
+            height: '100%',
             width: '100%',
         }, "-=0.5")
 
@@ -61,21 +75,36 @@ function DynamicIsland({handleClick, isDarkMode}) {
             width: '100%',
         },"-=0.1");
 
-        tl.to(volumeSlideRef.current, {
-            top: 0,
-            opacity: 1
-        })
-
         console.log('hello world')
     };
 
-    const VolumeSlider = () => {
+    const handleNextClick = () => {
+        if(selectedIndex === 2){
+            setSelectedIndex(0)
+        }else{
+            setSelectedIndex(prev => prev + 1)
+        }
+    }
+
+    const handleBackClick = () => {
+        if(selectedIndex === 0){
+            setSelectedIndex(2)
+        }else{
+            setSelectedIndex(prev => prev - 1)
+        }
+    }
+
+    const LengthSlider = () => {
         return(
-            <div className='flex-1 h-full relative top-10 opacity-0' ref={volumeSlideRef}>
-                <div className='h-[20px] w-full flex gap-2 items-center justify-center text-white'>
-                    <FaVolumeXmark />
-                        <div className='flex-1 h-[4px] bg-blue-500 rounded-full' />
-                    <FaVolumeUp />
+            <div className='w-full space-y-3'>
+                <div className='w-full h-[3px] bg-white/20 rounded-full'>
+                    <div className='w-[35%] h-full bg-white rounded-full flex items-center justify-end'>
+                        <div className='h-[10px] w-[10px] bg-white rounded-full' />
+                    </div>
+                </div>
+                <div className='flex items-center justify-between text-sm text-white/90'>
+                    <p>0:37</p>
+                    <p>3:26</p>
                 </div>
             </div>
         )
@@ -91,13 +120,13 @@ function DynamicIsland({handleClick, isDarkMode}) {
                     <div className='w-fit flex h-full items-center gap-3 text-white cursor-pointer relative' ref={playContainerRef} onClick={handleShowModalAnimation}>
                         <img 
                             className='h-[35px] w-[40px] rounded-md relative' 
-                            src={imageCover}
+                            src={selectedAlbum.cover}
                             alt='Abbey road'
                             ref={dynamicIslandImage}
                         />
                         <div className='flex flex-1 items-center'>
-                            <p className='relative' ref={currentlyPlayingRef}>Wizkid - Kese (Dance)</p>
-                            <VolumeSlider />
+                            <p className='relative' ref={currentlyPlayingRef}>{selectedAlbum.title}</p>
+                            
                         </div>
                         <FaPlayCircle size={22} className='' />
                     </div>
@@ -105,13 +134,43 @@ function DynamicIsland({handleClick, isDarkMode}) {
                         {/* <IonToggle aria-label="Success toggle" color="success" checked={true}></IonToggle> */}
                     </div>
                 </div>
-                <div className='h-[0px] w-full z-[45] grid grid-cols-2 gap-5 bg-white/10' ref={modalref}>
-                    <img
-                        className='h-[35px] w-[40px] rounded-md relative opacity-0' 
-                        src={imageCover}
-                        alt='Abbey road'
-                        ref={modalImageRef}
-                    />
+                <div className='h-[0px] w-full z-[45] grid grid-cols-2 gap-5  box-border' ref={modalref}>
+                    <div className='w-full h-full overflow-hidden relative'>
+                    <AnimatePresence>
+                        <motion.div 
+                            className='h-full w-full overflow-hidden pb-2 absolute top-0 left-0'
+                            key={selectedIndex}
+                            initial={{scale: 0.5, opacity: 0.6}}
+                            animate={{scale: 1, opacity: 1}}
+                            exit={{scale: 0.5, opacity: 0}}
+                        >
+                            <img
+                                // className='h-[35px] w-[40px] rounded-xl relative opacity-0 object-cover' 
+                                className='h-full w-full rounded-xl relative opacity-1 object-cover' 
+                                src={selectedAlbum.cover}
+                                alt='Abbey road'
+                                ref={modalImageRef}
+                            />
+                        </motion.div>
+                    </AnimatePresence>
+                    </div>
+                    <div className='w-full h-full flex flex-col gap-5 justify-end items-center pb-10'>
+                        <div className='h-fit w-full bg-white/20 rounded-lg flex items-center gap-2 p-2 text-white font-medium'>
+                            <img
+                                src={selectedAlbum.artist.image}
+                                alt='wizkid'
+                                className='h-[30px] w-[30px] rounded-full object-cover'
+                            />
+                            <p>{selectedAlbum.artist.name}</p>
+                        </div>
+                        <LengthSlider />
+                        
+                        <div className='w-full h-fit flex items-center justify-between text-white px-5'>
+                            <IoPlaySkipBack size={25} className='cursor-pointer' onClick={handleBackClick} />
+                                <FaPauseCircle size={45} className='cursor-pointer' />
+                            <IoPlaySkipForward size={25} className='cursor-pointer' onClick={handleNextClick} />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
