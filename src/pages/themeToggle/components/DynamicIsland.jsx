@@ -7,6 +7,7 @@ import { IoPlaySkipBack, IoPlaySkipForward } from "react-icons/io5";
 import { albums } from '../../../constants/music';
 import { AnimatePresence, motion } from 'motion/react';
 import { IoMdCloseCircle } from "react-icons/io";
+import Toggle from './Toggle';
 
 const imageCover = '/morayo.jpeg'
 
@@ -196,8 +197,9 @@ function DynamicIsland({handleClick, isDarkMode}) {
                             <p className='relative' ref={currentlyPlayingRef}>{selectedAlbum.title}</p>
                         </div>
                     </div>
-                    <div className='h-full w-[100px] rounded-full bg-orange-500 cursor-pointer relative' ref={toggleButtonRef} onClick={handleClick}>
+                    <div className='h-full w-fit rounded-full cursor-pointer relative flex items-center' ref={toggleButtonRef} onClick={handleClick}>
                         {/* <IonToggle aria-label="Success toggle" color="success" checked={true}></IonToggle> */}
+                        <Toggle />
                     </div>
                     <div ref={closeBtnRef} className='hidden' onClick={handleHideModalAnimation}>
                         <IoMdCloseCircle size={25} className='text-white/50 cursor-pointer' />
