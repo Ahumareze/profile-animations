@@ -13,7 +13,7 @@ function Ege() {
 
     return (
         <div>
-            <div className='min-h-screen w-full bg-black flex items-center justify-center relative'>
+            {/* <div className='min-h-screen w-full bg-black flex items-center justify-center relative'>
                 <Header 
                     fireAnimations={titleCardsAnimationsDone} 
                 />
@@ -28,9 +28,10 @@ function Ege() {
                 <AwwwardsCard
                     fireAnimations={titleCardsAnimationsDone}
                 />
-                {/* <div className='h-full w-full absolute top-0 left-0'>
-                    <MouseTrail />
-                </div> */}
+                
+            </div> */}
+            <div className='h-screen w-full bg-black'>
+                <MouseTrail />
             </div>
         </div>
     )

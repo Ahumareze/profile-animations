@@ -9,6 +9,7 @@ import Wizkid from './pages/wizkid/Wizkid'
 import Ege from './pages/ege/Ege'
 import HoverCards from './pages/hover-cards/HoverCards'
 import ThemeToggle from './pages/themeToggle/ThemeToggle'
+import CursorPlayground from './pages/cursorPlayground/CursorPlayground'
 
 export const routes = createBrowserRouter([
   {
@@ -42,5 +43,9 @@ export const routes = createBrowserRouter([
   {
     path: '/future-furnitures',
     element: <Furniture />
+  },
+  {
+    path: '/cursor',
+    element: <CursorPlayground />
   }
 ])

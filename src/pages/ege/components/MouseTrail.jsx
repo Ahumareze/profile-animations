@@ -13,11 +13,10 @@ const images = [
 ]
 
 const MouseTrail = () => {
-    const [isMoving, setIsMoving] = useState(false);
     const [positions, setPositions] = useState([]);
     const timeoutRef = useRef(null);
     const lastRecordedPositionRef = useRef(null);
-    const maxTrailPoints = 8; // Number of divs in the trail
+    const maxTrailPoints = 50; // Number of divs in the trail
     const minDistanceBetweenPoints = 50; // Minimum distance between points in pixels
 
   useEffect(() => {
@@ -41,7 +40,6 @@ const MouseTrail = () => {
     // Clear previous timeout if exists
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     
-    setIsMoving(true);
     
     const currentPosition = { x: e.clientX, y: e.clientY };
     
@@ -61,7 +59,6 @@ const MouseTrail = () => {
 
         // Set timeout to clear trail after mouse stops moving
         timeoutRef.current = setTimeout(() => {
-            setIsMoving(false);
             setPositions([]);
             lastRecordedPositionRef.current = null;
         }, 1000);
@@ -82,7 +79,7 @@ const MouseTrail = () => {
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
-        <AnimatePresence>
+      <AnimatePresence>
         {positions.map((pos, index) => (
             <motion.div
                 initial={{opacity: 0, scale: 0.8}}
