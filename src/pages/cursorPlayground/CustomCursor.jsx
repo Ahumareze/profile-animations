@@ -40,7 +40,7 @@ const CustomCursor = () => {
     >
       {/* Your custom cursor image goes here */}
       <img
-        src='/icons/cursor.png'
+        src='/icons/lebron.png'
         alt=''
       />
     </div>

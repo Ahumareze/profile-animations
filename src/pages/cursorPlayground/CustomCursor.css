@@ -16,6 +16,7 @@ body {
 }
 
 .custom-cursor img{
-    height: 30px;
-    width: 30px;
+    height: 80px;
+    rotate: -45deg;
+    /* width: 30px; */
 }

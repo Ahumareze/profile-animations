@@ -2,17 +2,19 @@ import React from 'react'
 import LoaderContainer from '../container/loader/LoaderContainer'
 import { FaGlobe } from 'react-icons/fa6'
 import { FiArrowRight, FiArrowUpRight } from 'react-icons/fi'
+import CustomCursor from './cursorPlayground/CustomCursor'
 
 function Home() {
     return (
         <LoaderContainer backdrop={'bg-white'}>
+            <CustomCursor />
             <div className='w-full min-h-screen'>
                 <div className='py-20 w-full mt-20 px-[20px]'>
                     <h1 className='text-5xl md:text-7xl font-extrabold text-center font-mango uppercase'>A couple <span className='text-blue-500'>cool stuff</span> I'm working on ⚡️</h1>
                 </div>
                 <div className='px-[20px] md:px-[50px] grid grid-cols-1 md:grid-cols-2 gap-10'>
                     <a href='https://rhymezlikedimez.ifeanyicodes.com/' target='_blank'>
-                        <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] duration-300 ease-in-out'>
+                        <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] hover:scale-105 hover:shadow-md duration-300 ease-in-out cursor-pointer'>
                             <img
                                 src='/rhymezlikedimez.gif'
                                 alt='rhymez like dimez'
@@ -22,8 +24,19 @@ function Home() {
                             <p className='text-black/70 text-sm'>Next JS 🔸 Gsap 🔸 Tailwind CSS</p>
                         </div>
                     </a>
+                    <a href='https://uzoamaka-portfolio.ifeanyicodes.com/'>
+                        <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] hover:scale-105 hover:shadow-md duration-300 ease-in-out cursor-pointer'>
+                            <img
+                                src='/projects/uzoamaka-portfolio.png'
+                                alt='uzoamaka'
+                                className='w-full rounded-xl max-h-[400px] object-cover'
+                            />
+                            <p className='mt-5 mb-2 text-lg font-medium text-black/70'>Creative Frontend portfolio development for award-winning actress Uzoamaka Aniunoh, showcasing her journey and achievements</p>
+                            <p className='text-black/70 text-sm'>Gsap 🔸 Motion</p>
+                        </div>
+                    </a>
                     <a href='https://macos-portfolio.ifeanyicodes.com/'>
-                        <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] duration-300 ease-in-out'>
+                        <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] hover:scale-105 hover:shadow-md duration-300 ease-in-out cursor-pointer'>
                             <img
                                 src='/projects/desktop-portfolio.png'
                                 alt='ifeanyi ahumareze macOs themed portfolio'
@@ -33,8 +46,20 @@ function Home() {
                             <p className='text-black/70 text-sm'>React 🔸 Tailwind CSS</p>
                         </div>
                     </a>
+                    
+                    <a href='#'>
+                        <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] hover:scale-105 hover:shadow-md duration-300 ease-in-out cursor-pointer'>
+                            <img
+                                src='/projects/keyboard.png'
+                                alt='3d keyboard'
+                                className='w-full rounded-xl max-h-[400px] object-cover'
+                            />
+                            <p className='mt-5 mb-2 text-lg font-medium text-black/70'>3D Interactive shopping experience (Work In Progress 🚧)</p>
+                            <p className='text-black/70 text-sm'>ThreeJS 🔸 R3F</p>
+                        </div>
+                    </a>
                     <a href='/spylt'>
-                        <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] duration-300 ease-in-out'>
+                        <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] hover:scale-105 hover:shadow-md duration-300 ease-in-out cursor-pointer'>
                             <img
                                 src='/splyt-project.png'
                                 alt='spylt project'
@@ -45,7 +70,7 @@ function Home() {
                         </div>
                     </a>
                     {/* <a href='/spylt'> */}
-                        <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] duration-300 ease-in-out cursor-not-allowed'>
+                        {/* <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] duration-300 ease-in-out cursor-none'>
                             <img
                                 src='/projects/threeJsGameImage.png'
                                 alt='threejs project'
@@ -53,7 +78,7 @@ function Home() {
                             />
                             <p className='mt-5 mb-2 text-lg font-medium text-black/70'>Fully customizable & interactive 3D web game. (Coming soon 🕒)</p>
                             <p className='text-black/70 text-sm'>Three Js 🔸 R3F 🔸 WebGL</p>
-                        </div>
+                        </div> */}
                     {/* </a> */}
                     {/* <a href='/future-furnitures'> */}
                         {/* <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] duration-300 ease-in-out cursor-not-allowed'>
