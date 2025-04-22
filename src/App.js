@@ -10,6 +10,7 @@ import Ege from './pages/ege/Ege'
 import HoverCards from './pages/hover-cards/HoverCards'
 import ThemeToggle from './pages/themeToggle/ThemeToggle'
 import CursorPlayground from './pages/cursorPlayground/CursorPlayground'
+import EyesTracker from './pages/eyesTracker/EyesTracker'
 
 export const routes = createBrowserRouter([
   {
@@ -47,5 +48,9 @@ export const routes = createBrowserRouter([
   {
     path: '/cursor',
     element: <CursorPlayground />
+  },
+  {
+    path: '/eyes-tracker',
+    element: <EyesTracker />
   }
 ])

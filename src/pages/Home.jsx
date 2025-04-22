@@ -7,18 +7,18 @@ import CustomCursor from './cursorPlayground/CustomCursor'
 function Home() {
     return (
         <LoaderContainer backdrop={'bg-white'}>
-            <CustomCursor />
+            {/* <CustomCursor /> */}
             <div className='w-full min-h-screen'>
                 <div className='py-20 w-full mt-20 px-[20px]'>
                     <h1 className='text-5xl md:text-7xl font-extrabold text-center font-mango uppercase'>A couple <span className='text-blue-500'>cool stuff</span> I'm working on ⚡️</h1>
                 </div>
-                <div className='px-[20px] md:px-[50px] grid grid-cols-1 md:grid-cols-2 gap-10'>
+                <div className='px-[20px] md:px-[50px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
                     <a href='https://rhymezlikedimez.ifeanyicodes.com/' target='_blank'>
                         <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] hover:scale-105 hover:shadow-md duration-300 ease-in-out cursor-pointer'>
                             <img
                                 src='/rhymezlikedimez.gif'
                                 alt='rhymez like dimez'
-                                className='w-full rounded-xl max-h-[400px]'
+                                className='w-full rounded-xl max-h-[400px] object-cover'
                             />
                             <p className='mt-5 mb-2 text-lg font-medium text-black/70'>Created this cool portfolio website for a really talented motion designer to showcase his amazing talent</p>
                             <p className='text-black/70 text-sm'>Next JS 🔸 Gsap 🔸 Tailwind CSS</p>
@@ -47,8 +47,8 @@ function Home() {
                         </div>
                     </a>
                     
-                    <a href='#'>
-                        <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] hover:scale-105 hover:shadow-md duration-300 ease-in-out cursor-pointer'>
+                    {/* <a href='#'> */}
+                        <div className='w-full p-5 rounded-xl hover:bg-red-200 cursor-not-allowed'>
                             <img
                                 src='/projects/keyboard.png'
                                 alt='3d keyboard'
@@ -57,7 +57,7 @@ function Home() {
                             <p className='mt-5 mb-2 text-lg font-medium text-black/70'>3D Interactive shopping experience (Work In Progress 🚧)</p>
                             <p className='text-black/70 text-sm'>ThreeJS 🔸 R3F</p>
                         </div>
-                    </a>
+                    {/* </a> */}
                     <a href='/spylt'>
                         <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] hover:scale-105 hover:shadow-md duration-300 ease-in-out cursor-pointer'>
                             <img
