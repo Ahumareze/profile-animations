@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 
 import skin from './skin.png';
 import { FaGithub } from 'react-icons/fa6';
+import Header from '../../components/header/Header';
 
 export default function EyesTracker() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -61,6 +62,7 @@ export default function EyesTracker() {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-blue-100 select-none bg-center bg-no-repeat bg-cover" style={{ backgroundImage: `url(${skin})` }}>
+      <Header />
       <h1 className="text-3xl font-bold mb-8 text-white">Move your mouse around!</h1>
       
       <div className="flex space-x-8">

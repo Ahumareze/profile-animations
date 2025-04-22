@@ -46,7 +46,17 @@ function Home() {
                             <p className='text-black/70 text-sm'>React 🔸 Tailwind CSS</p>
                         </div>
                     </a>
-                    
+                    <a href='/eyes-tracker'>
+                        <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] hover:scale-105 hover:shadow-md duration-300 ease-in-out cursor-pointer'>
+                            <img
+                                src='/projects/mouse-tracker.gif'
+                                alt='mouse tracker'
+                                className='w-full rounded-xl max-h-[400px] object-cover'
+                            />
+                            <p className='mt-5 mb-2 text-lg font-medium text-black/70'>A Fun mouse tracker effect</p>
+                            <p className='text-black/70 text-sm'>Tailwind CSS</p>
+                        </div>
+                    </a>
                     {/* <a href='#'> */}
                         <div className='w-full p-5 rounded-xl hover:bg-red-200 cursor-not-allowed'>
                             <img
@@ -69,6 +79,7 @@ function Home() {
                             <p className='text-black/70 text-sm'>React 🔸 Gsap 🔸 Tailwind CSS</p>
                         </div>
                     </a>
+                    
                     {/* <a href='/spylt'> */}
                         {/* <div className='w-full p-5 rounded-xl hover:bg-[#f5f5f5] duration-300 ease-in-out cursor-none'>
                             <img
