@@ -24,8 +24,8 @@ export default function Backdrop({activeTheme}){
 
     return(
         <div className="h-screen w-full absolute top-0 right-0 overflow-hidden">
-            <div className="h-full w-full relative bg-red-500">
-                <div className="h-[100px] w-[100px] absolute bottom-10 right-10 bg-blue-500 rounded-full" id="blue-backdrop" />
+            <div className="h-full w-full relative bg-[#f5f5f5]">
+                <div className="h-[60px] w-[60px] absolute bottom-10 right-10 bg-blue-500 rounded-full" id="blue-backdrop" />
             </div>
         </div>
     )

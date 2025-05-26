@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import Backdrop from './Backdrop'
+import ToggleButton from './ToggleButton';
 
 function ThemeChanger() {
     const [activeTheme, setActiveTheme] = useState("");
 
-    const handleThemeSelect = () => {
-        setActiveTheme("blue")
+    const handleThemeSelect = (theme) => {
+        setActiveTheme(theme)
     }
 
 
@@ -13,10 +14,10 @@ function ThemeChanger() {
         <div className='h-screen w-full relative'>
             <Backdrop activeTheme={activeTheme} />
             <div className='h-full w-full absolute top-0 left-0 p-[30px]'>
-                <div className='w-full h-full border border-white flex items-center justify-center gap-20'>
+                <div className='w-full h-full flex items-center justify-center gap-20'>
                     {[0,1,2].map((_, index) => (
                         <div 
-                            className='h-fit w-[300px] bg-white rounded-2xl p-[10px] group' 
+                            className='h-fit w-[300px] bg-white rounded-2xl p-[10px] shadow-xl group' 
                             key={index}
                         >
                             <div className='h-[40px] w-full bg-white group-hover:bg-[#eee] rounded-xl group-hover:h-[140px] duration-200 ease-in-out flex justify-end'>
@@ -43,7 +44,7 @@ function ThemeChanger() {
                 </div>
             </div>
             {/* controls */}
-            <div className='h-[100px] w-[100px] fixed bottom-10 right-10 bg-white rounded-full' onClick={handleThemeSelect} />
+            <ToggleButton handleThemeSelect={handleThemeSelect} />
         </div>
     )
 }
