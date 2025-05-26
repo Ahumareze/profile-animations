@@ -11,6 +11,7 @@ import HoverCards from './pages/hover-cards/HoverCards'
 import ThemeToggle from './pages/themeToggle/ThemeToggle'
 import CursorPlayground from './pages/cursorPlayground/CursorPlayground'
 import EyesTracker from './pages/eyesTracker/EyesTracker'
+import ThemeChanger from './pages/themeChanger/ThemeChanger'
 
 export const routes = createBrowserRouter([
   {
@@ -52,5 +53,9 @@ export const routes = createBrowserRouter([
   {
     path: '/eyes-tracker',
     element: <EyesTracker />
+  },
+  {
+    path: '/theme-selector',
+    element: <ThemeChanger />
   }
 ])
