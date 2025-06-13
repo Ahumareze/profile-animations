@@ -12,6 +12,7 @@ import ThemeToggle from './pages/themeToggle/ThemeToggle'
 import CursorPlayground from './pages/cursorPlayground/CursorPlayground'
 import EyesTracker from './pages/eyesTracker/EyesTracker'
 import ThemeChanger from './pages/themeChanger/ThemeChanger'
+import Cards from './pages/cards/Cards'
 
 export const routes = createBrowserRouter([
   {
@@ -43,7 +44,7 @@ export const routes = createBrowserRouter([
     element: <Wizkid />
   },
   {
-    path: '/future-furnitures',
+    path: '/furniture',
     element: <Furniture />
   },
   {
@@ -57,5 +58,9 @@ export const routes = createBrowserRouter([
   {
     path: '/theme-selector',
     element: <ThemeChanger />
+  },
+  {
+    path: '/cards',
+    element: <Cards />
   }
 ])
