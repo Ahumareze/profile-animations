@@ -17,12 +17,36 @@ const coaches = [
         writeUp: `Ayodeji Ibrahim Balogun (born 16 July 1990), better known as Wizkid, is a Nigerian singer and songwriter. Born in the Ojuelegba suburb of Surulere, Lagos, Wizkid is a voice in the emerging Afrobeats movement. His music is a blend of Afrobeats, afropop, R&B, afrobeat, reggae, dancehall, and pop. He began recording music at the age of 11 and released a collaborative album with the Glorious Five, a group he and a couple of his church friends formed. In 2009, Wizkid signed a record deal with Banky W's Empire Mates Entertainment (E.M.E). He rose to the limelight after releasing "Holla at Your Boy", the lead single from his debut studio album, Superstar (2011), which also spawned the singles "Tease Me/Bad Guys" and "Don't Dull".`, 
         image: "/music/wizkid-2.jpeg"
     },
+];
+
+const artists = [
+    {
+        name: 'TEMS',
+        tagName: 'Temilade',
+        image: '/music/tems.jpeg'
+    },
+    {
+        name: 'WIZKID',
+        tagName: 'Nigerian Entertainment Industry',
+        image: '/music/wizkid-2.jpeg'
+    },
+    {
+        name: 'DAVIDO',
+        tagName: '001',
+        image: '/music/davido.jpeg'
+    },
+    {
+        name: 'REMA',
+        tagName: 'Rave Lord',
+        image: '/music/rema-2.jpeg'
+    }
 ]
 
 export default function Cards(){
     const [selectedCoach, setSelectedCoach] = useState(null);
 
     return(
+        <div>
         <div className="w-full bg-[#685BFF] px-[20px] py-20 bg-cover bg-no-repeat bg-center" style={{backgroundImage: `url(images/sections-coaches-backdrop.svg)`}}>
             <div className="mx-auto max-w-[1300px]">
                 <p className="text-white font-utBoldonse uppercase text-center" data-aos="fade-up">Learn from Industry Leaders</p>
@@ -44,8 +68,42 @@ export default function Cards(){
                 </div>
             </div>
         </div>
+
+        <div className="max-w-[940px] mx-auto grid grid-cols-2 gap-2 py-20">
+            {artists.map(({
+                name,
+                image,
+                tagName
+            }, index) => (
+                <MiniProfileCard
+                    key={index}
+                    tagName={tagName}
+                    name={name}
+                    image={image}
+                />
+            ))}
+        </div>
+        </div>
     )
 };
+
+const MiniProfileCard = ({image, name, tagName}) => {
+    return(
+        <div className="h-[400px] w-full rounded-3xl group relative">
+            <img
+                src={image}
+                alt={name}
+                className="h-full w-full object-cover filter md:grayscale group-hover:grayscale-0 transition duration-300 bg-black/20 rounded-xl"
+            />
+            <div className="absolute h-full w-full bottom-0 right-0 flex flex-col justify-end p-[20px]">
+                <div className={`space-y-1 duration-400 delay-100 ease-in-out text-white`}>
+                    <h2 className="font-extrabold uppercase text-3xl relative top-20 group-hover:top-0 duration-200 ease-in-out">{name}</h2>
+                    <p className="text-base font-medium relative top-20 group-hover:top-0 duration-300 ease-in-out">{tagName}</p>
+                </div>
+            </div>
+        </div>
+    )
+}
 
 const CoachCard = ({name, position, image, index, isActive = false, handleOpen, handleClose, writeUp}) => {
         

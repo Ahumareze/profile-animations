@@ -13,6 +13,7 @@ import CursorPlayground from './pages/cursorPlayground/CursorPlayground'
 import EyesTracker from './pages/eyesTracker/EyesTracker'
 import ThemeChanger from './pages/themeChanger/ThemeChanger'
 import Cards from './pages/cards/Cards'
+import ImageParallax from './pages/imageParalax/ImageParallax'
 
 export const routes = createBrowserRouter([
   {
@@ -62,5 +63,9 @@ export const routes = createBrowserRouter([
   {
     path: '/cards',
     element: <Cards />
-  }
+  },
+  {
+    path: '/image-parallax',
+    element: <ImageParallax />
+  },
 ])
