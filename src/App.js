@@ -14,6 +14,7 @@ import EyesTracker from './pages/eyesTracker/EyesTracker'
 import ThemeChanger from './pages/themeChanger/ThemeChanger'
 import Cards from './pages/cards/Cards'
 import ImageParallax from './pages/imageParalax/ImageParallax'
+import ProductsListing from './pages/productsListing/ProductsListing'
 
 export const routes = createBrowserRouter([
   {
@@ -67,5 +68,9 @@ export const routes = createBrowserRouter([
   {
     path: '/image-parallax',
     element: <ImageParallax />
+  },
+  {
+    path: '/products-listing',
+    element: <ProductsListing />
   },
 ])
